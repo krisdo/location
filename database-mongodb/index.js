@@ -6,7 +6,8 @@ mongoose.Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/airbrb-loc', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
 const locationSchema = mongoose.Schema({

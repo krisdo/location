@@ -16,7 +16,9 @@ app.get('/api/location/:listingId', (req, res) => {
   const listingId = req.params.listingId;
   db.Location.find({listingId})
   .then((results) => {
-    res.send(results);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200);
+    res.json(results[0]);
   })
   .catch((err) => {
     console.log('Did not find listing');
