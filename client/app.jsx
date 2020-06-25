@@ -14,7 +14,8 @@ class Location extends React.Component {
 
   render() {
     return(
-      <div>Location<Map/>
+      <div>Location
+        <div><Map/></div>
       </div>
     )
   }

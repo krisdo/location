@@ -9,34 +9,44 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef(),
-    this.map = null,
-    this.marker - null
+    this.state = {
+      map: null,
+      marker: null
+    }
+    this.createMap = this.createMap.bind(this);
+    this.createMarker = this.createMarker.bind(this);
   }
 
   createMap (lat, lng) {
-    return (new window.google.maps.Map(this.mapRef.current, {
+    this.setState({
+      map: new google.maps.Map(this.mapRef.current, {
       zoom: 16,
       center: {lat, lng},
       disableDefaultUI: true,
-      }))
+      })
+    })
   }
 
-  createMarker = () =>
-  new window.google.maps.Marker({
-    position: { lat: 43.642567, lng: -79.387054 },
-    map: this.googleMap,
-  })
+  createMarker (){
+    this.setState({
+      marker: new google.maps.Marker({
+        position: { lat: 43.642567, lng: -79.387054 },
+        map: this.state.map
+      }) 
+    })
+}
 
   componentDidMount(){
     const googleMapScript = document.createElement('script');
     googleMapScript.src = 
-      `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_AP_KEY}&libraries=places`;
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBk_jqZ6Ooxx5CJxr_r9pE3eLm6kvtdm6E";
     
-      window.document.body.appendChild(googleMapScript);
-      googleMapScript.addEventListener('load', {
-        this.map = this.createMap(),
-        this.marker = this.createMarker()
-      })
+    window.document.body.appendChild(googleMapScript);
+    googleMapScript.addEventListener('load', () => {
+      this.createMap(43.642567, -79.387054);
+      this.createMarker();
+    });
+    
   }
 
   render() {
