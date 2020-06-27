@@ -1,4 +1,5 @@
 import React, { Component, createRef} from 'react';
+import GOOGLE_MAP_API_KEY from '../../config.js';
 
 class Map extends Component {
 
@@ -27,24 +28,28 @@ class Map extends Component {
     })
   }
 
-  createMarker (){
+  createMarker (lat, lng){
     this.setState({
       marker: new google.maps.Marker({
-        position: { lat: 43.642567, lng: -79.387054 },
+        position: {lat, lng},
         map: this.state.map
       }) 
     })
+
 }
 
   componentDidMount(){
+    // const lat = 34.052235;
+    // const lng = -118.243683;
     const googleMapScript = document.createElement('script');
     googleMapScript.src = 
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBk_jqZ6Ooxx5CJxr_r9pE3eLm6kvtdm6E";
+      `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}`;
     
     window.document.body.appendChild(googleMapScript);
     googleMapScript.addEventListener('load', () => {
-      this.createMap(43.642567, -79.387054);
-      this.createMarker();
+    
+      this.createMap(this.props.lat, this.props.lng);
+      this.createMarker(this.props.lat, this.props.lng);
     });
     
   }
