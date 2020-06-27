@@ -10,9 +10,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/app.js",
-    "db-setup": "node database-mongodb/seed.js",
-    "server-spec": "mocha",
-    "react-spec": "jest",
+    "seed": "node database-mongodb/seed.js",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
   },
