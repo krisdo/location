@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Components should render initial layout 1`] = `
+Array [
+  <div
+    id="map"
+    style={
+      Object {
+        "height": "300px",
+        "width": "400px",
+      }
+    }
+  />,
+]
+`;
