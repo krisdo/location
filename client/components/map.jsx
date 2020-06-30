@@ -1,12 +1,9 @@
 import React, { Component, createRef} from 'react';
 import GOOGLE_MAP_API_KEY from '../../config.js';
+import About from './About.jsx';
 
 class Map extends Component {
 
-
-  // get googleMapDiv() {
-  //   return document.getElementById("google-map")
-  // }
   constructor(props) {
     super(props);
     this.mapRef = React.createRef(),

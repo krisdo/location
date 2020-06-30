@@ -5,7 +5,7 @@ const About = ({children, onClose, open}) =>
   
   open ?
   ReactDOM.createPortal(
-    <div className='modal'>
+   
       <div className='overlay' style={{    
       position: 'fixed',
       top: '0',
@@ -16,6 +16,7 @@ const About = ({children, onClose, open}) =>
     }}>
         <div className='content' style={
           { width: '90%',
+            borderRadius: '5px',
             background: 'white',
             padding: '20px',
             position: 'absolute',
@@ -23,10 +24,9 @@ const About = ({children, onClose, open}) =>
             left: '50%',
             transform: 'translate(-50%, -50%)'
         }}>
-          <div className='modal_close' onClick={onClose}>&times;</div>
+          <div id='modal_close' onClick={onClose}>&times;</div>
           <div>Map should be here</div>
-        </div>
-     </div>
+        </div> 
   </div>,
   document.getElementById('modal'))
   : null
