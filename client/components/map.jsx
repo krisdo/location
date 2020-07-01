@@ -1,12 +1,9 @@
 import React, { Component, createRef} from 'react';
 import GOOGLE_MAP_API_KEY from '../../config.js';
+import About from './About.jsx';
 
 class Map extends Component {
 
-
-  // get googleMapDiv() {
-  //   return document.getElementById("google-map")
-  // }
   constructor(props) {
     super(props);
     this.mapRef = React.createRef(),
@@ -21,7 +18,7 @@ class Map extends Component {
   createMap (lat, lng) {
     this.setState({
       map: new google.maps.Map(this.mapRef.current, {
-      zoom: 16,
+      zoom: 5,
       center: {lat, lng},
       disableDefaultUI: true,
       })
@@ -47,7 +44,6 @@ class Map extends Component {
     
     window.document.body.appendChild(googleMapScript);
     googleMapScript.addEventListener('load', () => {
-    
       this.createMap(this.props.lat, this.props.lng);
       this.createMarker(this.props.lat, this.props.lng);
     });
@@ -55,7 +51,10 @@ class Map extends Component {
   }
 
   render() {
+
+
     return(
+      
       <div
       id="map"
       ref={this.mapRef}

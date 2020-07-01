@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './components/map.jsx';
+import Map from './components/Map.jsx';
+import About from './components/About.jsx';
 
 class Location extends React.Component {
 
@@ -11,21 +12,28 @@ class Location extends React.Component {
       lng: null,
       city: null,
       state: null,
-      country: null
+      country: null,
+      showModal: false
     }
+    this.toggleModal = this.toggleModal.bind(this);
+    
   }
+  toggleModal () {
+    this.setState({
+      showModal: !this.state.showModal
+    });
+  }
+  
 
   componentDidMount() {
-    let listingId = 0;
+    let listingId = 89;
     fetch(`/api/location/${listingId}`, {method: 'GET'})
     .then ( (results) => {
       return results.json()
     })
     .then( (data) => {
-   
+
       let {address} = data;
-      console.log(address.latitude);
-      console.log(address.longitude);
       this.setState({
         lat: Number(address.latitude),
         lng: Number(address.longitude),
@@ -40,7 +48,9 @@ class Location extends React.Component {
     return(
       <div>Location
         <div>{this.state.city}, {this.state.state}, {this.state.country}</div>
-        <div><Map lat={this.state.lat} lng={this.state.lng} /></div>
+        <div>{ (this.state.lat !== null && this.state.lng !== null) ?  <Map lat={this.state.lat} lng={this.state.lng}/> : <div>loading...</div>}</div>
+        <div><About open={this.state.showModal} onClose={this.toggleModal}/></div>
+        <button onClick={this.toggleModal}>More About Location</button>
       </div>
     )
   }
