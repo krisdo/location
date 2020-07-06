@@ -28,7 +28,7 @@ const About = ({children, onClose, open}) =>
           <div>Map should be here</div>
         </div> 
   </div>,
-  document.getElementById('modal'))
+  document.getElementById('about-modal'))
   : null
 
 

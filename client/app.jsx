@@ -27,7 +27,7 @@ class Location extends React.Component {
 
   componentDidMount() {
     let listingId = 89;
-    fetch(`/api/location/${listingId}`, {method: 'GET'})
+    fetch(`http://localhost:2001/api/location/${listingId}`, {method: 'GET'})
     .then ( (results) => {
       return results.json()
     })
@@ -56,4 +56,4 @@ class Location extends React.Component {
   }
 }
 
-ReactDOM.render(<Location />, document.getElementById('app'));
+ReactDOM.render(<Location />, document.getElementById('location'));

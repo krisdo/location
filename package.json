@@ -7,6 +7,8 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "proxy": "http://localhost:1000/",
+
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/app.js",
