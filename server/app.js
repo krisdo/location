@@ -6,6 +6,11 @@ const db = require('../database-mongodb/index.js')
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:1000/");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.listen(port, () => {
   console.log(`Listening at ${port}`);
