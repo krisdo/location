@@ -23,10 +23,16 @@ class Location extends React.Component {
   }
 
   getListingId(){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    return urlParams.get('id');
+
+    /*Use this for if url has query params */
+    // const queryString = window.location.search;
+    // const urlParams = new URLSearchParams(queryString);
+    // return urlParams.get('id');
+
+    /*  accessing listingID as an endpoint */
+    return window.location.pathname.slice(1, -1);
   }
+  
   toggleModal () {
     this.setState({
       showModal: !this.state.showModal

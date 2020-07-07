@@ -1,21 +1,26 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 2001;
 const db = require('../database-mongodb/index.js')
 
-app.use(express.static(path.join(__dirname, '../public')));
+/* this is for query params URL */
+// app.use(express.static(path.join(__dirname, '../public')));
+
+
+app.use('/:listingId', express.static(path.join(__dirname, '../public')));
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+/* Alternative: use CORS npm pkg */
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.listen(port, () => {
-  console.log(`Listening at ${port}`);
-});
+
 
 app.get('/api/location/:listingId', (req, res) => {
 
@@ -27,7 +32,10 @@ app.get('/api/location/:listingId', (req, res) => {
     res.json(results[0]);
   })
   .catch((err) => {
+    res.status(404);
     console.log('Did not find listing');
   })
 
 });
+
+module.exports = app;
