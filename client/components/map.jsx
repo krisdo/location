@@ -2,6 +2,7 @@ import React, { Component, createRef} from 'react';
 import GOOGLE_MAP_API_KEY from '../../config.js';
 import About from './About.jsx';
 
+
 class Map extends Component {
 
   constructor(props) {
@@ -20,7 +21,8 @@ class Map extends Component {
       map: new google.maps.Map(this.mapRef.current, {
       zoom: 5,
       center: {lat, lng},
-      disableDefaultUI: true,
+      zoomControl: true,
+      streetViewControl: true
       })
     })
   }
@@ -51,15 +53,12 @@ class Map extends Component {
   }
 
   render() {
-
-
     return(
-      
       <div
-      id="map"
+      id={this.props.id}
       ref={this.mapRef}
-      style={{width: '400px', height: '300px'}}
-      />
+      style={this.props.style}>
+      </div>
     )
   }
 }

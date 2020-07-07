@@ -1,39 +1,58 @@
-# Project Name
+# FEC - Location Service for Airbnb item page
 
-> Project description
+  Location Service module clone of Airbnb's created with Node.js, React and MongoDB
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - Trello Board: https://trello.com/b/dR6Qp3HX/fec-airbrb
+  - Github: https://github.com/Wilberg-Airbnb
+  - https://github.com/Wilberg-Airbnb/reservation
+  - https://github.com/Wilberg-Airbnb/reviews
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
+3. [Development](#development)
 
 ## Usage
+  GET Endpoint: /api/location/:listingId
 
-> Some usage instructions
+  Sample Output: {
+        "address": {
+            "street": "476 Rippin Roads",
+            "city": "Muellerberg",
+            "state": "Connecticut",
+            "zipCode": "04528-2900",
+            "country": "Andorra",
+            "latitude": 17.0003,
+            "longitude": -45.7531
+        },
+        "_id": "5eed9aab2bdca58a88f91467",
+        "listingId": 2,
+        "description": "Ut ipsa consequuntur. Omnis odit illum quasi laudantium et. Labore vel aut qui quos minus adipisci modi nemo. Fugiat quis accusantium voluptatem minus et. Unde voluptatibus veritatis maxime aut molestiae beatae totam ut.",
+        "gettingAround": null,
+        "__v": 0
+    }
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
+- Express 4.17
+- Mongoose 5.9.19
+- MongoDB 4.2.6
 
 ## Development
 
-### Installing Dependencies
+### Installation and Setup
 
 From within the root directory:
 
-```sh
-npm install -g webpack
-npm install
-```
+$ npm install
+$ npm run seed 
+$ npm run server-dev
+
+Bundle.js url: http://localhost:2001/bundle.js
+
+
 
