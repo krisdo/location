@@ -7,8 +7,6 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "proxy": "http://localhost:1000/",
-
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/app.js",
@@ -27,7 +25,8 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
