@@ -41,6 +41,7 @@
 - Express 4.17
 - Mongoose 5.9.19
 - MongoDB 4.2.6
+- Signup for Google Maps API & enable Maps JavaScript API [Link](https://console.developers.google.com/apis/)
 
 ## Development
 
@@ -52,6 +53,10 @@ $ npm install
 $ npm run seed 
 $ npm run server-dev
 
+Setting up config.js file
+  -add key
+  -change file name from confic_copy.js to config.js
+  
 Bundle.js url: http://localhost:2001/bundle.js
 
 
