@@ -59,5 +59,7 @@ Setting up config.js file
   
 Bundle.js url: http://localhost:2001/bundle.js
 
+Location service will only respond to PROXYdomain?id={listingId}
+
 
 
