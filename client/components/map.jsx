@@ -19,7 +19,7 @@ class Map extends Component {
   createMap (lat, lng) {
     this.setState({
       map: new google.maps.Map(this.mapRef.current, {
-      zoom: 5,
+      zoom: 10,
       center: {lat, lng},
       zoomControl: true,
       streetViewControl: true

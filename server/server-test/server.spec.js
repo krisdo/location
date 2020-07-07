@@ -1,6 +1,6 @@
 'use strict'
 
-const {Location} = require('../database-mongodb/index.js');
+const {Location} = require('../../database-mongodb/index.js');
 // const app = require('../server/app.js');
 const chai = require('chai');
 const chaiHttp = require("chai-http");
