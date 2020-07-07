@@ -57,6 +57,10 @@ $ npm run server-dev
 Setting up config.js file
   -add key
   -change file name from config_copy.js to config.js
+
+Service renders at:
+    <div id="location"></div>
+    <div id="about-modal"></div>
   
 Bundle.js url: http://localhost:2001/bundle.js
 
