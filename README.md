@@ -49,15 +49,16 @@
 
 ### Installation and Setup
 
+Setting up config.js file
+  -add key
+  -change file name from config_copy.js to config.js
+  
 From within the root directory:
 
 $ npm install --save express mongoose bluebird faker
 $ npm run seed 
 $ npm run server-dev
 
-Setting up config.js file
-  -add key
-  -change file name from config_copy.js to config.js
 
 Service renders at:
     <div id="location"></div>
