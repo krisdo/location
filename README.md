@@ -42,6 +42,7 @@
 - Mongoose 5.9.19
 - MongoDB 4.2.6
 - Bluebird 3.7.2
+- Faker 4.1.0
 - Signup for Google Maps API & enable Maps JavaScript API [Link](https://console.developers.google.com/apis/)
 
 ## Development
@@ -50,7 +51,7 @@
 
 From within the root directory:
 
-$ npm install --save express mongoose bluebird
+$ npm install --save express mongoose bluebird faker
 $ npm run seed 
 $ npm run server-dev
 
