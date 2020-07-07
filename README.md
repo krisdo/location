@@ -62,9 +62,9 @@ Service renders at:
     <div id="location"></div>
     <div id="about-modal"></div>
   
-Bundle.js url: http://localhost:2001/bundle.js
+- if proxy server URL is: domain/:listingId/ then Bundle.js url: http://localhost:2001/public/bundle.js
+- if proxy server URL is: domain?id=:listingId then Bundle.js url: http://localhost:2001/bundle.js
 
-Location service will only respond to PROXYdomain?id={listingId}
 
 
 
