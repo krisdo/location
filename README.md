@@ -41,6 +41,7 @@
 - Express 4.17
 - Mongoose 5.9.19
 - MongoDB 4.2.6
+- Bluebird 3.7.2
 - Signup for Google Maps API & enable Maps JavaScript API [Link](https://console.developers.google.com/apis/)
 
 ## Development
@@ -49,13 +50,13 @@
 
 From within the root directory:
 
-$ npm install
+$ npm install --save express mongoose bluebird
 $ npm run seed 
 $ npm run server-dev
 
 Setting up config.js file
   -add key
-  -change file name from confic_copy.js to config.js
+  -change file name from config_copy.js to config.js
   
 Bundle.js url: http://localhost:2001/bundle.js
 
