@@ -1,7 +1,11 @@
 import React, { Component, createRef} from 'react';
 import GOOGLE_MAP_API_KEY from '../../config.js';
 import About from './About.jsx';
+import styled from 'styled-components';
 
+const mapWrapper = styled.div`
+
+`;
 
 class Map extends Component {
 
@@ -22,7 +26,8 @@ class Map extends Component {
       zoom: 10,
       center: {lat, lng},
       zoomControl: true,
-      streetViewControl: true
+      streetViewControl: true,
+      disableDefaultUI: true
       })
     })
   }
@@ -38,8 +43,7 @@ class Map extends Component {
 }
 
   componentDidMount(){
-    // const lat = 34.052235;
-    // const lng = -118.243683;
+  
     const googleMapScript = document.createElement('script');
     googleMapScript.src = 
       `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}`;

@@ -21,7 +21,7 @@ return (
   }}>
       <div className='content' style={
         { width: '60%',
-          borderRadius: '5px',
+          borderRadius: '12px',
           background: 'white',
           padding: '20px',
           position: 'absolute',
@@ -39,7 +39,7 @@ return (
               <p>{gettingAround !== null ? gettingAround : null}</p>
             </section>
             <section style={{float: 'left', width: '50%'}}>
-              <Map id={'map-modal'} style={{width: '100%', height: '500px'}} lat={lat} lng={lng}/>
+              <Map id={'map-modal'} style={{width: '100%', height: '500px', borderRadius: '12px'}} lat={lat} lng={lng}/>
             </section>
           </section>
                 
