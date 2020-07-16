@@ -59,6 +59,9 @@ class Location extends React.Component {
         gettingAround
       })
     })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 
   render() {

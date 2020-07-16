@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  mongo:
+    image: "mongo"
+    container_name: mongo
+    # restart: always
+    # env_file: .env
+    # environment:
+    #   # provide your credentials here
+    #   - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+    #   - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    volumes:  
+      - dbdata:/data/db   
+    # networks:
+    #   - app-network 
+    ports:
+      - "27017:27017"
+  app:
+    image: express
+    container_name: express-mongo
+    build: .
+    restart: always
+    # env_file: .env
+    # environment:
+    #   - MONGO_USERNAME=$MONGO_USERNAME
+    #   - MONGO_PASSWORD=$MONGO_PASSWORD
+      # - MONGO_HOSTNAME=mongo
+    #   - MONGO_PORT=$MONGO_PORT
+      # - MONGO_DB=$MONGO_DB 
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    # networks:
+    #   - app-network
+    ports:
+      - "2001:2001"
+    depends_on:
+      - "mongo"
+    command: bash -c "/usr/wait-for-it.sh --timeout=0 mongo:27017 && npm run build"
+volumes:
+  dbdata:
+  node_modules:  
+
