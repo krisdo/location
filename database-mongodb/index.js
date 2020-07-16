@@ -14,7 +14,7 @@ mongoose.Promise = require('bluebird');
 
 // const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 // const url = 'mongodb://mongo:27017/airbnb-location?authSource=admin';
-const url = 'mongodb://mongo:27017/airbnb-location;
+const url = 'mongodb://mongo:27017/airbnb-location';
 
 const options = {
   useNewUrlParser: true,
