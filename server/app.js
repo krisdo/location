@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const db = require('../database-mongodb/index.js')
+// const mongoSeeding = require('../database-mongodb/seed.js')
 
 /* this is for query params URL */
 // app.use(express.static(path.join(__dirname, '../public')));
