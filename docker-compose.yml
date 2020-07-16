@@ -37,7 +37,7 @@ services:
       - "2001:2001"
     depends_on:
       - "mongo"
-    command: bash -c "/usr/wait-for-it.sh --timeout=0 mongo:27017 && npm run build"
+    command: bash -c "/usr/wait-for-it.sh --timeout=0 mongo:27017 && npm run docker"
 volumes:
   dbdata:
   node_modules:  
