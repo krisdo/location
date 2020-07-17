@@ -19,6 +19,7 @@ class Location extends React.Component {
       showModal: false
     }
     this.toggleModal = this.toggleModal.bind(this);
+    this.displayInformation = this.displayInformation.bind(this);
     
   }
 
@@ -39,10 +40,21 @@ class Location extends React.Component {
     });
   }
   
+  displayInformation(){
+
+    if(this.state.description !== null) {
+    return (<div>
+      <h3>{this.state.city}, {this.state.state}, {this.state.country}</h3>
+      <p>{this.state.description}</p>
+      </div>
+      )
+  
+    }
+  }
 
   componentDidMount() {
     const {listingId} = this.state;
-    fetch(`http://localhost:2001/api/location/${listingId}`, {method: 'GET'})
+    fetch(`http://${window.location.host}/api/location/${listingId}`, {method: 'GET'})
     .then ( (results) => {
       return results.json()
     })
@@ -70,8 +82,7 @@ class Location extends React.Component {
         <h2>Location</h2>
         {(this.state.lat !== null && this.state.lng !== null) ?  <Map id={'map'} style={{zIndex: -1, position: 'relative', width: '100%', height: 300, borderRadius: '12px'}} lat={this.state.lat} lng={this.state.lng}/> : <div>loading...</div>}
         <About open={this.state.showModal} onClose={this.toggleModal} city={this.state.city} state={this.state.state} country={this.state.country} description={this.state.description} gettingAround={this.state.gettingAround} lat={this.state.lat} lng={this.state.lng}/>
-        <h3>{this.state.city}, {this.state.state}, {this.state.country}</h3>
-        <p>{this.state.description}</p>
+        {this.displayInformation()}
         <p><button onClick={this.toggleModal}>More about the location</button></p>
       </div>
     )
