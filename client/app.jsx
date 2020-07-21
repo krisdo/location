@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import Map from './components/Map.jsx';
 import About from './components/About.jsx';
 
+const buttonStyle = {
+  background: 'transparent',
+  padding: '13px 23px',
+  borderWidth: '1px',
+  borderRadius: '8px'
+}
+
 class Location extends React.Component {
 
   constructor(props) {
@@ -80,10 +87,10 @@ class Location extends React.Component {
     return(
       <div>
         <h2>Location</h2>
-        {(this.state.lat !== null && this.state.lng !== null) ?  <Map id={'map'} style={{zIndex: -1, position: 'relative', width: '100%', height: 300, borderRadius: '12px'}} lat={this.state.lat} lng={this.state.lng}/> : <div>loading...</div>}
+        {(this.state.lat !== null && this.state.lng !== null) ?  <Map id={'map'} style={{zIndex: -1, position: 'relative', width: '100%', height: 300}} lat={this.state.lat} lng={this.state.lng}/> : <div>loading...</div>}
         <About open={this.state.showModal} onClose={this.toggleModal} city={this.state.city} state={this.state.state} country={this.state.country} description={this.state.description} gettingAround={this.state.gettingAround} lat={this.state.lat} lng={this.state.lng}/>
         {this.displayInformation()}
-        <p><button onClick={this.toggleModal}>More about the location</button></p>
+        <p><button style={buttonStyle} onClick={this.toggleModal}>More about the location</button></p>
       </div>
     )
   }

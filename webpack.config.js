@@ -5,7 +5,14 @@ const webpack = require('webpack');
 module.exports = {
   entry: __dirname + '/client/app.jsx',
   module: {
-    rules: [
+    rules: [{
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
+    },
       {
         test: /\.jsx$/,
         exclude: /node_modules/,

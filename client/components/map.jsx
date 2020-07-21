@@ -1,6 +1,5 @@
 import React, { Component, createRef} from 'react';
 import GOOGLE_MAP_API_KEY from '../../config.js';
-import About from './About.jsx';
 import styled from 'styled-components';
 
 const mapWrapper = styled.div`
@@ -33,10 +32,17 @@ class Map extends Component {
   }
 
   createMarker (lat, lng){
+    
+    const markerIcon = {
+      url: `${window.location.href}airbrb_home.png`,
+      scaledSize: new google.maps.Size(62,62),
+    };
+
     this.setState({
       marker: new google.maps.Marker({
         position: {lat, lng},
-        map: this.state.map
+        map: this.state.map,
+        icon: markerIcon
       }) 
     })
 

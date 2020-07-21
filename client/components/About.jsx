@@ -35,7 +35,7 @@ return (
               <h2>Location</h2>
               <h3>{city}, {state}, {country}</h3>
               <p>{description}</p>
-              <h3>Getting Around</h3>
+              {gettingAround !== null ? <h3>Getting Around</h3> : null}
               <p>{gettingAround !== null ? gettingAround : null}</p>
             </section>
             <section style={{float: 'left', width: '50%'}}>
