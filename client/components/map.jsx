@@ -34,7 +34,7 @@ class Map extends Component {
   createMarker (lat, lng){
     
     const markerIcon = {
-      url: `${window.location.href}airbrb_home.png`,
+      url: `http://ec2-3-12-169-208.us-east-2.compute.amazonaws.com:2001/public/airbrb_home.png`,
       scaledSize: new google.maps.Size(62,62),
     };
 
