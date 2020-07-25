@@ -87,7 +87,7 @@ class Location extends React.Component {
   render() {
     return(
       <div>
-        <h2>Location</h2>
+        <h2>Location!!!</h2>
         {(this.state.lat !== null && this.state.lng !== null) ?  <Map id={'map'} style={{zIndex: -1, position: 'relative', width: '100%', height: 300}} lat={this.state.lat} lng={this.state.lng}/> : <div>loading...</div>}
         <About open={this.state.showModal} onClose={this.toggleModal} city={this.state.city} state={this.state.state} country={this.state.country} description={this.state.description} gettingAround={this.state.gettingAround} lat={this.state.lat} lng={this.state.lng}/>
         {this.displayInformation()}
