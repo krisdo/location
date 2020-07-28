@@ -42,9 +42,6 @@ return (
               <Map id={'map-modal'} style={{width: '100%', height: '500px', borderRadius: '12px'}} lat={lat} lng={lng}/>
             </section>
           </section>
-                
-           
-           
         </div> 
   </div>,
   document.getElementById('about-modal'))
