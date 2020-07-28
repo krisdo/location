@@ -29,22 +29,19 @@ return (
           left: '50%',
           transform: 'translate(-50%, -50%)'
       }}>
-          <div id='modal_close' onClick={onClose}>&times;</div>
+          <div id='modal_close' style={{cursor: 'pointer'}} onClick={onClose}>&times;</div>
           <section className="indent" style={{float: 'left'}}>
             <section style={{float: 'left', width: '50%'}}>
-              <h2>Location</h2>
-              <h3>{city}, {state}, {country}</h3>
-              <p>{description}</p>
-              {gettingAround !== null ? <h3>Getting Around</h3> : null}
-              <p>{gettingAround !== null ? gettingAround : null}</p>
+              <h2 style={{marginBottom: '16px'}}>Location</h2>
+              <h4 style={{marginBottom: '16px'}}>{city}, {state}, {country}</h4>
+              <p style={{marginBottom: '40px'}}>{description}</p>
+              {gettingAround !== null ? <h4 style={{marginBottom: '16px'}}>Getting Around</h4> : null}
+              <p style={{marginBottom: '40px'}}>{gettingAround !== null ? gettingAround : null}</p>
             </section>
             <section style={{float: 'left', width: '50%'}}>
               <Map id={'map-modal'} style={{width: '100%', height: '500px', borderRadius: '12px'}} lat={lat} lng={lng}/>
             </section>
           </section>
-                
-           
-           
         </div> 
   </div>,
   document.getElementById('about-modal'))

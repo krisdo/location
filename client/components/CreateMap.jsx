@@ -1,9 +1,6 @@
 import React, { Component, createRef} from 'react';
-import GOOGLE_MAP_API_KEY from '../../config.js';
 
-
-
-class Map extends Component {
+class CreateMap extends Component {
 
   constructor(props) {
     super(props);
@@ -45,19 +42,6 @@ class Map extends Component {
 
 }
 
-  componentDidMount(){
-  
-    const googleMapScript = document.createElement('script');
-    googleMapScript.src = 
-      `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}`;
-    
-    window.document.body.appendChild(googleMapScript);
-    googleMapScript.addEventListener('load', () => {
-      this.createMap(this.props.lat, this.props.lng);
-      this.createMarker(this.props.lat, this.props.lng);
-    });
-    
-  }
 
   render() {
     return(
@@ -65,6 +49,7 @@ class Map extends Component {
       id={this.props.id}
       ref={this.mapRef}
       style={this.props.style}>
+      {googleMapScript.addEventListener('load', () => true) ? <CreateMap createMap={this.createMap} createMarker={this.createMarker} lat={this.props.lat} lng={this.props.lng}/> : null}
       </div>
     )
   }
