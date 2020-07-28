@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Map from './components/Map.jsx';
 import About from './components/About.jsx';
-import GOOGLE_MAP_API_KEY from '../config.js';
+// import GOOGLE_MAP_API_KEY from '../config.js';
 
 
 const buttonStyle = {
