@@ -1,4 +1,4 @@
-# FEC - Location Service for Airbnb item page
+# FEC - Location Service for Airbnb Item Page
 
   Location Service module clone of Airbnb's created with Node.js, React and MongoDB
 
@@ -8,6 +8,10 @@
   - Github: https://github.com/Wilberg-Airbnb
   - https://github.com/Wilberg-Airbnb/reservation
   - https://github.com/Wilberg-Airbnb/reviews
+  - https://github.com/Wilberg-Airbnb/suggestion
+  - https://github.com/Wilberg-Airbnb/photos
+  - https://github.com/Wilberg-Airbnb/host
+  - https://github.com/Wilberg-Airbnb/description
 
 ## Table of Contents
 
@@ -16,24 +20,26 @@
 3. [Development](#development)
 
 ## Usage
-  GET Endpoint: /api/location/:listingId
+  
+  - GET URL: http://3.12.169.208:2001/api/location/:listingId
+  - GET Endpoint: /api/location/:listingId
 
-  Sample Output: {
-        "address": {
-            "street": "476 Rippin Roads",
-            "city": "Muellerberg",
-            "state": "Connecticut",
-            "zipCode": "04528-2900",
-            "country": "Andorra",
-            "latitude": 17.0003,
-            "longitude": -45.7531
-        },
-        "_id": "5eed9aab2bdca58a88f91467",
-        "listingId": 2,
-        "description": "Ut ipsa consequuntur. Omnis odit illum quasi laudantium et. Labore vel aut qui quos minus adipisci modi nemo. Fugiat quis accusantium voluptatem minus et. Unde voluptatibus veritatis maxime aut molestiae beatae totam ut.",
-        "gettingAround": null,
-        "__v": 0
-    }
+    Sample Output: {
+          "address": {
+              "street": "476 Rippin Roads",
+              "city": "Muellerberg",
+              "state": "Connecticut",
+              "zipCode": "04528-2900",
+              "country": "Andorra",
+              "latitude": 17.0003,
+              "longitude": -45.7531
+          },
+          "_id": "5eed9aab2bdca58a88f91467",
+          "listingId": 2,
+          "description": "Ut ipsa consequuntur. Omnis odit illum quasi laudantium et. Labore vel aut qui quos minus adipisci modi nemo. Fugiat quis accusantium voluptatem minus et. Unde voluptatibus veritatis maxime aut molestiae beatae totam ut.",
+          "gettingAround": null,
+          "__v": 0
+      }
 
 ## Requirements
 
