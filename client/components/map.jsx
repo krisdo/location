@@ -44,18 +44,30 @@ class Map extends Component {
     })
 
 }
-
-  componentDidMount(){
-  
+  loadMapScript() {
     const googleMapScript = document.createElement('script');
     googleMapScript.src = 
       `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}`;
     
     window.document.body.appendChild(googleMapScript);
-    googleMapScript.addEventListener('load', () => {
+
+  }
+
+  componentDidMount(){
+    if(!window.google) {
+      const googleMapScript = document.createElement('script');
+      googleMapScript.src = 
+        `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAP_API_KEY}`;
+      
+      window.document.body.appendChild(googleMapScript);
+      googleMapScript.addEventListener('load', () => {
+        this.createMap(this.props.lat, this.props.lng);
+        this.createMarker(this.props.lat, this.props.lng);
+      });
+    } else {
       this.createMap(this.props.lat, this.props.lng);
       this.createMarker(this.props.lat, this.props.lng);
-    });
+    }
     
   }
 
