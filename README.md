@@ -55,10 +55,12 @@
 
 - Node 6.13.0
 - Express 4.17
+- React 16.13.1
 - Mongoose 5.9.19
 - MongoDB 4.2.6
 - Bluebird 3.7.2
 - Faker 4.1.0
+- Styled-components
 - Signup for Google Maps API & enable Maps JavaScript API [Link](https://console.developers.google.com/apis/)
 
 ## Installation and Setup
@@ -70,7 +72,7 @@ Setting up config.js file
 From within the root directory:
 
 ```sh
-- $ npm install --save express mongoose bluebird faker
+- $ npm install 
 - $ npm run seed 
 - $ npm run server-dev
 ```
