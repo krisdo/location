@@ -3,7 +3,7 @@
   Location Service is a microservice for our Airbnb clone, Airbrb. It is created with Node.js, React and MongoDB
 
   ![](AirBrb.gif)
-  
+
   >Airbnb users can zoom in and out of the map to check out location or click on More About Location to get more information regarding the listing
 
 ## Related Projects
@@ -82,7 +82,7 @@ Service renders at:
 
 ## Deployment
 
-Create a Docker image and spin a container by running with docker-compose.yml
+Create a Docker image and spin a container by running docker-compose.yml
 
 ```sh
 docker-compose up
