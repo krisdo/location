@@ -1,6 +1,10 @@
 # FEC - Location Service for Airbnb Item Page
 
-  Location Service module clone of Airbnb's created with Node.js, React and MongoDB
+  Location Service is a microservice for our Airbnb clone, Airbrb. It is created with Node.js, React and MongoDB
+
+  ![](AirBrb.gif)
+  
+  >Airbnb users can zoom in and out of the map to check out location or click on More About Location to get more information regarding the listing
 
 ## Related Projects
 
@@ -17,7 +21,9 @@
 
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
-3. [Development](#development)
+3. [Installation and Setup](#InstallationandSetup)
+4. [Deployment](#deployment)
+
 
 ## Usage
   
@@ -51,9 +57,7 @@
 - Faker 4.1.0
 - Signup for Google Maps API & enable Maps JavaScript API [Link](https://console.developers.google.com/apis/)
 
-## Development
-
-### Installation and Setup
+## Installation and Setup
 
 Setting up config.js file
   -add key
@@ -61,9 +65,11 @@ Setting up config.js file
   
 From within the root directory:
 
-$ npm install --save express mongoose bluebird faker
-$ npm run seed 
-$ npm run server-dev
+```sh
+- $ npm install --save express mongoose bluebird faker
+- $ npm run seed 
+- $ npm run server-dev
+```
 
 
 Service renders at:
@@ -74,5 +80,12 @@ Service renders at:
 - if proxy server URL is: domain?id=:listingId then Bundle.js url: http://localhost:2001/bundle.js
 
 
+## Deployment
+
+Create a Docker image and spin a container by running with docker-compose.yml
+
+```sh
+docker-compose up
+```
 
 
