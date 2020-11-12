@@ -1,20 +1,20 @@
-# FEC - Location Service for Airbnb Item Page
+# Location Microservice
 
-  Location Service is a microservice for our Airbnb clone, Airbrb. It is created with Node.js, React and MongoDB
+  A microservice for Airbnb Item Detail Page clone, Airbrb. It is created with Node.js, React and MongoDB
 
   ![](AirBrb.gif)
 
-  >Airbnb users can zoom in and out of the map to check out location or click on More About Location to get more information regarding the listing
+  >Airbnb users can zoom in and out of the map to check out location or click on 'More About Location' to get listing information
 
 ## Related Projects
 
   - Trello Board: https://trello.com/b/dR6Qp3HX/fec-airbrb
   - Github: https://github.com/Wilberg-Airbnb
+  - **https://github.com/Wilberg-Airbnb/host** (microservice I developed)
   - https://github.com/Wilberg-Airbnb/reservation
   - https://github.com/Wilberg-Airbnb/reviews
   - https://github.com/Wilberg-Airbnb/suggestion
   - https://github.com/Wilberg-Airbnb/photos
-  - https://github.com/Wilberg-Airbnb/host
   - https://github.com/Wilberg-Airbnb/description
 
 ## Table of Contents
@@ -72,9 +72,9 @@ Setting up config.js file
 From within the root directory:
 
 ```sh
-- $ npm install 
-- $ npm run seed 
-- $ npm run server-dev
+ $ npm install 
+ $ npm run seed 
+ $ npm run server-dev
 ```
 
 
